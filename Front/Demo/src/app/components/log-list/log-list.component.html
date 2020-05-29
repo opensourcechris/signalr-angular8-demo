@@ -1,0 +1,18 @@
+<div class="content">
+  <div class="content__left">
+    <div>
+      <mat-form-field appearance="outline" (keyup.enter)="addLog()" width="100%">
+        <mat-label>Add log</mat-label>
+        <input matInput [(ngModel)]="logAdd">
+      </mat-form-field>
+      <br />
+      <button mat-flat-button color="primary" (click)="addLog()">Submit</button>
+    </div>
+  </div>
+  <div class="content__right">
+    <div *ngIf="logs.length == 0">Messages will appear here...</div>
+    <div *ngFor="let log of logs">
+      <div>{{log}}</div>
+    </div>
+  </div>
+</div>
